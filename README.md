@@ -1,1 +1,1 @@
-# 1521_CSF
+# COMP1521_Computer_System_Fundamentals
