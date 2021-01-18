@@ -15,8 +15,8 @@ int main (int argc, char *argv[]) {
         return 1;
     }
 
-    int low_bit = strcol(argv[1], NULL, 0);
-    int high_bit = strcol(argv[2], NULL, 0);
+    int low_bit = strtol(argv[1], NULL, 0);
+    int high_bit = strtol(argv[2], NULL, 0);
 
     uint32_t mask;
     int n_bits = 8 * sizeof(mask);

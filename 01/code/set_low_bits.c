@@ -14,7 +14,7 @@ int main (int argc, char *argv[]) {
         return 1;
     }
 
-    int n = strcol(argv[1], NULL, 0);
+    int n = strtol(argv[1], NULL, 0);
 
     uint32_t mask;
     int n_bits = 8 * sizeof(mask);
