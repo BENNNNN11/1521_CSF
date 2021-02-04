@@ -54,5 +54,9 @@
    }
    ```
 
-   
+   In C, the `static` keyword is a storage-class specifier: it specifies variable locations and function visibility. 
+
+   The `static` specifier on the `x1` variable has the effect of making it **inaccessible from any other `.c` file**. It is still available in all of the functions below the declaration, and will **be stored in the `data` region of memory**, with all of the other global variables.
+
+   The `static` specifier on the `f()` function has a similar effect on the visibility of the function. It is accessible from any function below the declaration, but is **inaccessible from functions defined before `f()`, and from in other `.c` files.**
 
