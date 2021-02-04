@@ -17,7 +17,7 @@ int main (int argc, char *argv[]) {
 
     int low_bit = strcol(argv[1], NULL, 0);
     int high_bit = strcol(argv[2], NULL, 0);
-    uint32_t value = strtol()
+    uint32_t value = strtol(argv[3], NULL, 0);
 
     uint32_t mask;
     int n_bits = 8 * sizeof(mask);
@@ -30,8 +30,18 @@ int main (int argc, char *argv[]) {
     mask = mask - 1;
     mask = mask << low_bit;
 
-    printf("Bits %d to %d of %u are ones: \n", low_bit, high_bit, mask);
-    print_bits(mask, n_bits);
+    // get a value with the bits outside the range low_bit..high_bit set to zero
+    uint32_t extracted_bits = value & mask;
+
+    // right shift the extracted bits so low_bit becomes bit 0
+    extracted_bits = extracted_bits >> low_bit;
+
+    printf("Value %u in binary is:\n", value);
+    print_bits(value, n_bits);
+    printf("\n");
+
+    printf("Bits %d to %d of %u are:\n", low_bit, high_bit, value);
+    print_bits(extracted_bits, mask_size);
     printf("\n");
     return 0;
 }
